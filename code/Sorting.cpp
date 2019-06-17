@@ -2,7 +2,7 @@
 
 /*
   Please refer to sorting.h for documentation on each function.
-  
+
    + ------ N O T E: -- Big scary warning! -----------------------------\
    |                                                                    |
    |    We clearly can't use unit testing to ensure that you're         |
@@ -30,26 +30,26 @@ Sorting::Sorting(){
 Sorting::~Sorting(){
 }
 
-void quicksort(vector<int>& data, int low_idx, int high_idx){
+void Sorting::quicksort(vector<int>& data, int low_idx, int high_idx){
 
 }
 
-int quicksort_partition(vector<int>& data, int low_idx, int high_idx){
+int Sorting::quicksort_partition(vector<int>& data, int low_idx, int high_idx){
 
 }
 
-void bubblesort(vector<int>& data){
+void Sorting::bubblesort(vector<int>& data){
 
 }
 
-void mergesort(vector<int>& data){
+void Sorting::mergesort(vector<int>& data){
 
 }
 
-void merge(vector<int>& left, vector<int>& right, vector<int>& result){
+void Sorting::merge(vector<int>& left, vector<int>& right, vector<int>& result){
 
 }
 
-void mystery_sort(vector<int>& data){
+void Sorting::mystery_sort(vector<int>& data){
   
 }

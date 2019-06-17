@@ -22,7 +22,7 @@ protected:
 		if(outgrade.is_open())
 		outgrade.clear();
 
-		max_grade = 23;
+		max_grade = 20;
 
 		outgrade << (int)std::ceil(100*total_grade/max_grade);
 		outgrade.close();
@@ -101,8 +101,11 @@ TEST_F(test_Sorting, TestQuickSort) {
 	Sorting mysorting;
   mysorting.quicksort(input_data, 0, (int) size_before-1);
   EXPECT_EQ(input_data.size(),size_before);
+	add_points_to_grade(1);
   EXPECT_TRUE(vectors_contain_same(input_data, input_data_orig));
+  add_points_to_grade(2);
   EXPECT_TRUE(is_nondecreasing(input_data));
+	add_points_to_grade(2);
 }
 
 TEST_F(test_Sorting, TestBubbleSort) {
@@ -113,8 +116,11 @@ TEST_F(test_Sorting, TestBubbleSort) {
   Sorting mysorting;
   mysorting.bubblesort(input_data);
 	EXPECT_EQ(input_data.size(),size_before);
+	add_points_to_grade(1);
   EXPECT_TRUE(vectors_contain_same(input_data, input_data_orig));
+	add_points_to_grade(2);
   EXPECT_TRUE(is_nondecreasing(input_data));
+	add_points_to_grade(2);
 }
 
 TEST_F(test_Sorting, TestMergeSort) {
@@ -125,11 +131,14 @@ TEST_F(test_Sorting, TestMergeSort) {
   Sorting mysorting;
   mysorting.mergesort(input_data);
   EXPECT_EQ(input_data.size(),size_before);
+	add_points_to_grade(1);
   EXPECT_TRUE(vectors_contain_same(input_data, input_data_orig));
+	add_points_to_grade(2);
   EXPECT_TRUE(is_nondecreasing(input_data));
+	add_points_to_grade(2);
 }
 
-TEST_F(test_Sorting, MysterySort) {
+TEST_F(test_Sorting, TestMysterySort) {
   vector<int> input_data = get_random_data(1000, 500);
   vector<int> input_data_orig = get_copy(input_data);
 
@@ -137,8 +146,11 @@ TEST_F(test_Sorting, MysterySort) {
   Sorting mysorting;
   mysorting.mystery_sort(input_data);
   EXPECT_EQ(input_data.size(), size_before);
+	add_points_to_grade(1);
   EXPECT_TRUE(vectors_contain_same(input_data, input_data_orig));
+	add_points_to_grade(2);
   EXPECT_TRUE(is_nondecreasing(input_data));
+	add_points_to_grade(2);
 }
 
 vector<int> get_random_data(int how_many, int upper_bound) {
@@ -170,8 +182,8 @@ bool vectors_contain_same(vector<int>& blue, vector<int> &green) {
       int target = blue[i];
       bool found = vector_contains(green, target);
       if (!found) {
-	ret = false;
-	break;
+				ret = false;
+				break;
       }
     }
   }
@@ -185,8 +197,8 @@ bool is_nondecreasing(vector<int>& data) {
     for (size_t i=1; i < data.size(); i++) {
       int here = data[i];
       if (prev > here) {
-	ret = false;
-	break;
+				ret = false;
+				break;
       }
       prev = here;
     }

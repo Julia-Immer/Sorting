@@ -67,12 +67,6 @@ public:
   // uses the helper function 'merge'.
   void mergesort(vector<int>& data);
 
-  // merge is the helper function for mergesort. It returns a vector
-  // containing the merged contents of the two input vectors.
-  // you must first define an empty vector and pass to result, once this
-  // function returns, merged content will be in that vector (hence pass by reference).
-  void merge(vector<int>& left, vector<int>& right, vector<int>& result);
-
   // mystery_sort is any other sorting function that you choose to
   // implement. You may write any additional sorting function you wish,
   // and call it 'mystery_sort'.
@@ -91,6 +85,12 @@ public:
   // you can add add more public member variables and member functions here if you need
 
 private:
+  // merge is the helper function for mergesort. It returns a vector
+  // containing the merged contents of the two input vectors.
+  // you must first define an empty vector and pass to result, once this
+  // function returns, merged content will be in that vector (hence pass by reference).
+  void merge(vector<int>& left, vector<int>& right, vector<int>& result);
+
   // you can add add more private member variables and member functions here if you need
 };
 
