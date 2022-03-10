@@ -39,7 +39,6 @@ protected:
   void add_points_to_grade(double points) {
     if (!::testing::Test::HasFailure()) {
       total_grade += points;
-      std::cout << "sofar: " << total_grade << endl;
     }
   }
 

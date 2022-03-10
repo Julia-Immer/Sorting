@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -45,17 +46,17 @@ public:
   // you do to this vector inside the quicksort function will be visible
   // outside as well.
   //
-  // low_idx and high_idx: these are the current indices for the
+  // low and high: these are the current indices for the
   // quicksort algorithm, and are normal pass-by-value parameters. Both
   // of these indices are inclusive: they refer to an addressable
   // element of the data vector.
-  void quicksort(vector<int>& data, int low_idx, int high_idx);
+  void quicksort(vector<int>& data, int low, int high);
 
   // quicksort_partition is the helper function for quicksort. Input
   // parameters have same semantics as for quicksort.
   //
   // The pivot index is returned.
-  int quicksort_partition(vector<int>& data, int low_idx, int high_idx);
+  int quicksort_partition(vector<int>& data, int low, int high);
 
   // bubblesort is probably the easiest sorting algorithm to conceive
   // of. It is unfortunately not all that fast. Here's your chance to
@@ -80,6 +81,9 @@ public:
   //
   // Also, write a comment somewhere near the top that explains which
   // sorting algorithm you're implementing.
+    
+    
+  //Selection Sort
   void mystery_sort(vector<int>& data);
   
   // you can add add more public member variables and member functions here if you need
@@ -91,7 +95,8 @@ private:
   // function returns, merged content will be in that vector (hence pass by reference).
   void merge(vector<int>& left, vector<int>& right, vector<int>& result);
 
-  // you can add add more private member variables and member functions here if you need
+  //Prints all the elements of the passed vector
+  void printVec(vector<int>& vec);
 };
 
 #endif  // SORTING_H__
